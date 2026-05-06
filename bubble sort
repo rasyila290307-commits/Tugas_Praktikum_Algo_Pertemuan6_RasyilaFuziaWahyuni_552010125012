@@ -1,0 +1,26 @@
+def bubble_sort(data):
+    n = len(data)
+    count = 0
+
+    for i in range(n):
+        print(f"\nIterasi ke-{i+1}:")
+        for j in range(0, n-i-1):
+            count += 1
+            print(f"  Bandingkan {data[j]} dan {data[j+1]}", end="")
+
+            if data[j] > data[j+1]:
+                print(" -> tukar")
+                data[j], data[j+1] = data[j+1], data[j]
+            else:
+                print(" -> tidak ditukar")
+
+            print(f"  Data sekarang: {data}")
+
+    return data, count
+
+
+data = [5, 2, 9, 1, 5, 6]
+hasil, langkah = bubble_sort(data.copy())
+
+print("\nHasil akhir:", hasil)
+print("Jumlah perbandingan:", langkah)
